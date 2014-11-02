@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'recipe_models#new'
+  #get 'recipes/index'
+  #
+  #get 'recipes/new'
+  #
+  resources :recipe_models
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

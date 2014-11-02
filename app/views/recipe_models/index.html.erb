@@ -1,0 +1,8 @@
+<h1>Recipes List</h1>
+<div class="recipes_list">
+  <% @recipes.each do |recipe| %>
+      <div class="recipe">
+        <p>Id: <%= recipe.id %>, Name: <%= recipe.name %></p>
+      </div>
+  <% end %>
+</div>

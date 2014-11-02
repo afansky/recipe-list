@@ -1,0 +1,10 @@
+<h1>New recipe created: '<%= @recipe_model.name %>'</h1>
+<div class="items">
+  <p>Recipe items:</p>
+  <% @recipe_model.items.each do |item| %>
+    <p><%= item.name %></p>
+  <% end %>
+</div>
+<div>
+  <%= link_to "Go to list", recipe_models_path %>
+</div>
