@@ -4,14 +4,14 @@
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to new the application database on another
+# database schema. If you need to create the application database on another
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102190828) do
+ActiveRecord::Schema.define(version: 20141103024119) do
 
   create_table "recipe_item_models", force: true do |t|
     t.text     "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141102190828) do
     t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uuid"
   end
 
 end
