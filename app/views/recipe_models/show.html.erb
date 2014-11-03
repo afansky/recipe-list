@@ -1,9 +1,15 @@
 <h1>Recipe</h1>
 <div class="recipe">
   <p>Recipe name: <%= label_tag @recipe_model.name %></p>
-  <div class="recipe-items">
-    <% @recipe_model.items.each do |item| %>
-    <p>Id: <%= label_tag item.id %>, Name: <%= label_tag item.name %>, Done: <%= label_tag item.done %> </p>
-    <% end %>
-  </div>
+
+  <%= form_for @recipe_model do |f| %>
+      <div class="recipe-items">
+        <% @recipe_model.items.each do |item| %>
+            <%= check_box_tag 'done_items[]', item.id, item.done %>
+            <%= label_tag item.name, item.name %>
+            <br/>
+        <% end %>
+      </div>
+      <%= f.submit %>
+  <% end %>
 </div>

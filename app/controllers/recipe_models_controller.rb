@@ -18,10 +18,27 @@ class RecipeModelsController < ApplicationController
 
     @recipe_model.save!
 
-    redirect_to :action => 'show', :id => @recipe_model.id
+    redirect_to :action => :show, :id => @recipe_model.id
   end
 
   def show
     @recipe_model = RecipeModel.find(params[:id])
+  end
+
+  def update
+    @recipe_model = RecipeModel.find(params[:id])
+    ids = params[:done_items]
+
+    @recipe_model.items.each do |item|
+      if ids.nil?
+        item.done = false
+      else
+        item.done = ids.include? item.id.to_s
+      end
+    end
+
+    @recipe_model.save!
+
+    redirect_to :action => :show, :id => @recipe_model.id
   end
 end
