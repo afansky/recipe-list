@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<p>
+  Here is your recipe list: <%= @url %>
+</p>
+<% if @recipe.url != nil %>
+    <p>
+      Original recipe url is: <%= @recipe.url %>
+    </p>
+<% end %>
+</body>
+</html>

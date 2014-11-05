@@ -9,6 +9,7 @@ class RecipeModelsController < ApplicationController
 
   def create
     @recipe_model = RecipeModel.new(:name => params[:recipe_model][:name],
+                                    :url => params[:recipe_model][:url],
                                     :uuid => SecureRandom.uuid)
 
     items = params[:items_text]
@@ -17,9 +18,16 @@ class RecipeModelsController < ApplicationController
       @recipe_model.items << item
     end
 
-    @recipe_model.save!
+    if @recipe_model.valid?
+      @recipe_model.save
 
-    redirect_to :action => :show, :id => @recipe_model.uuid
+      email = params[:email]
+      RecipeMailer.recipe_email(email, @recipe_model).deliver
+
+      redirect_to :action => :show, :id => @recipe_model.uuid
+    else
+      render :new
+    end
   end
 
   def show

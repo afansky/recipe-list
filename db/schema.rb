@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103024119) do
+ActiveRecord::Schema.define(version: 20141105004614) do
 
   create_table "recipe_item_models", force: true do |t|
     t.text     "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141103024119) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uuid"
+    t.text     "url"
   end
 
 end

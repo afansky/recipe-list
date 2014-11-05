@@ -5,8 +5,8 @@
         <div class="recipe-items">
           <% @recipe_model.items.each do |item| %>
               <div class="form-group">
-                <%= check_box_tag 'done_items[]', item.id, item.done %>
-                <%= label_tag item.name, item.name %>
+                <%= check_box_tag 'done_items[]', item.id, item.done, :id => "done_item_#{item.id}" %>
+                <%= label_tag "done_item_#{item.id}", item.name %>
               </div>
           <% end %>
         </div>
