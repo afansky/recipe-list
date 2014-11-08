@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141105004614) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "recipe_item_models", force: true do |t|
     t.text     "name"
     t.boolean  "done"
