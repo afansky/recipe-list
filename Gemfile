@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
+gem 'jquery-rails'
 gem 'autoprefixer-rails'
 
 # insures that the app is configured for heroku

@@ -9,6 +9,19 @@
 </head>
 <body>
 
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <%= link_to root_path, :class => 'navbar-brand' do %>
+        <span class="glyphicon glyphicon-home"></span>
+        <span>Easy Groceries</span>
+    <% end %>
+
+    <p class="navbar-text navbar-right">
+      <%= link_to 'About', about_path, :class => 'navbar-link' %>
+    </p>
+  </div>
+</nav>
+
 <%= yield %>
 
 </body>
